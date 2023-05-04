@@ -1,13 +1,13 @@
 package xadrez;
 
-import entidades.Posicao;
-import entidades.Tabuleiro;
 import pecasXadrez.Bispo;
 import pecasXadrez.Cavalo;
 import pecasXadrez.Peao;
 import pecasXadrez.Rainha;
 import pecasXadrez.Rei;
 import pecasXadrez.Torre;
+import tabuleiroJogo.Posicao;
+import tabuleiroJogo.Tabuleiro;
 
 public class PartidaXadrez {
 

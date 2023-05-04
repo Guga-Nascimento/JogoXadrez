@@ -1,4 +1,4 @@
-package entidades;
+package tabuleiroJogo;
 
 public class Posicao {
 	private Integer linha;
