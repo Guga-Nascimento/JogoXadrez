@@ -37,11 +37,11 @@ public class PartidaXadrez {
 		novoLugarPeca('a',8, new Torre(tabuleiro,Cor.PRETO));
 		novoLugarPeca('h',8, new Torre(tabuleiro,Cor.PRETO));
 		
-		novoLugarPeca('d',8, new Rei(tabuleiro,Cor.BRANCO));
-		novoLugarPeca('d',1, new Rei(tabuleiro,Cor.PRETO));
+		novoLugarPeca('d',1, new Rei(tabuleiro,Cor.BRANCO));
+		novoLugarPeca('d',8, new Rei(tabuleiro,Cor.PRETO));
 		
-		novoLugarPeca('e',1, new Rainha(tabuleiro,Cor.PRETO));
-		novoLugarPeca('e',8, new Rainha(tabuleiro,Cor.BRANCO));
+		novoLugarPeca('e',8, new Rainha(tabuleiro,Cor.PRETO));
+		novoLugarPeca('e',1, new Rainha(tabuleiro,Cor.BRANCO));
 		
 		novoLugarPeca('f',1, new Bispo(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('c',1, new Bispo(tabuleiro,Cor.BRANCO));
