@@ -36,6 +36,9 @@ public class PosicaoXadrez {
 	public String toString() {
 		return ""+ coluna +linha;
 	}
+
+
+	
 	
 	
 	
