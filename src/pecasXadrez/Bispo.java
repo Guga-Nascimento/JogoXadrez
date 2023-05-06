@@ -13,5 +13,10 @@ public class Bispo extends PecaXadrez {
 	public String toString() {
 		return "B";
 	}
+	@Override
+	public boolean[][] possivelMovimento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
