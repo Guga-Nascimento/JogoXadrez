@@ -14,6 +14,8 @@ public class programa {
 		
 		Scanner sc = new Scanner(System.in);
 		PartidaXadrez partidaXadrez = new PartidaXadrez();
+		//comentario atualixado
+		
 		
 		while(true) {
 			try {
