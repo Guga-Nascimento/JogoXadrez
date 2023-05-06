@@ -1,6 +1,6 @@
 package Aplication;
 
-import java.util.InputMismatchException; 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import xadrez.Cor;
@@ -30,18 +30,23 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-	
+	// https://stackoverflow.com/questions/2979383/java-clear-the-console
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}
+
 	public static PosicaoXadrez lerPosicaoXadrez(Scanner sc) {
 		try {
-		String s = sc.nextLine();
-		char coluna = s.charAt(0);
-		int linha = Integer.parseInt(s.substring(1));
-		return new PosicaoXadrez(coluna,linha);
-		}
-		catch(RuntimeException e) {
+			String s = sc.nextLine();
+			char coluna = s.charAt(0);
+			int linha = Integer.parseInt(s.substring(1));
+			return new PosicaoXadrez(coluna, linha);
+		} catch (RuntimeException e) {
 			throw new InputMismatchException("erro ao ler posição do xadrez, valores validos a1 a 8h");
 		}
 	}
+
 	public static void printTabuleiro(PecaXadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((8 - i) + " ");
@@ -50,24 +55,23 @@ public class UI {
 			}
 			System.out.println();
 		}
+		System.out.println();
 		System.out.println("   a  b  c  d  e  f  g  h");
+	
 	}
 
-
 	private static void printPeca(PecaXadrez peca) {
-		
+
 		System.out.print(" ");
-    	if (peca == null) {
-            System.out.print("-");
-        }
-        else {
-            if (peca.getCor() == Cor.BRANCO) {
-                System.out.print(ANSI_WHITE + peca + ANSI_RESET);
-            }
-            else {
-                System.out.print(ANSI_YELLOW + peca + ANSI_RESET);
-            }
-        }
-        System.out.print(" ");
+		if (peca == null) {
+			System.out.print("-");
+		} else {
+			if (peca.getCor() == Cor.BRANCO) {
+				System.out.print(ANSI_WHITE + peca + ANSI_RESET);
+			} else {
+				System.out.print(ANSI_YELLOW + peca + ANSI_RESET);
+			}
+		}
+		System.out.print(" ");
 	}
 }
