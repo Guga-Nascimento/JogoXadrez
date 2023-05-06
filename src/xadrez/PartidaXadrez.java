@@ -29,6 +29,12 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	public boolean[][] possivelMovimento(PosicaoXadrez posicaoOrigem){
+		Posicao posicao = posicaoOrigem.posicionar();
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).possivelMovimento();
+	}
+	
 	public PecaXadrez performaceMovimentoXadrez(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoAlvo) {
 		
 		Posicao origem = posicaoOrigem.posicionar();
@@ -97,7 +103,7 @@ public class PartidaXadrez {
 		novoLugarPeca('b',7, new Peao(tabuleiro,Cor.PRETO));
 		novoLugarPeca('a',7, new Peao(tabuleiro,Cor.PRETO));
 		
-		novoLugarPeca('a',2, new Peao(tabuleiro,Cor.BRANCO));
+		//novoLugarPeca('a',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('b',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('c',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('d',2, new Peao(tabuleiro,Cor.BRANCO));
