@@ -103,10 +103,10 @@ public class PartidaXadrez {
 		novoLugarPeca('b',7, new Peao(tabuleiro,Cor.PRETO));
 		novoLugarPeca('a',7, new Peao(tabuleiro,Cor.PRETO));
 		
-		//novoLugarPeca('a',2, new Peao(tabuleiro,Cor.BRANCO));
+		novoLugarPeca('a',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('b',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('c',2, new Peao(tabuleiro,Cor.BRANCO));
-		novoLugarPeca('d',2, new Peao(tabuleiro,Cor.BRANCO));
+		//novoLugarPeca('d',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('e',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('f',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('g',2, new Peao(tabuleiro,Cor.BRANCO));
