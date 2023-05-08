@@ -11,12 +11,24 @@ import tabuleiroJogo.Posicao;
 import tabuleiroJogo.Tabuleiro;
 
 public class PartidaXadrez {
-
+	
+	private int Turno;
+	private Cor JogadorAtual;
 	private Tabuleiro tabuleiro;
 
 	public PartidaXadrez() {
 		tabuleiro = new Tabuleiro(8, 8);
+		Turno = 1;
+		JogadorAtual = Cor.BRANCO;
 		configuracaoInicial();
+	}
+	
+	public int getTurno() {
+		return Turno;
+	}
+
+	public Cor getJogadorAtual() {
+		return JogadorAtual;
 	}
 
 	public PecaXadrez[][] getPecas() {
@@ -43,6 +55,7 @@ public class PartidaXadrez {
 		validarPosicaoOrigem(origem);
 		validarPosicaoAlvo(origem,alvo);
 		Peca capturarPeca = fazerMover(origem,alvo);
+		proximoTurno();
 		return (PecaXadrez)capturarPeca;
 	}
 	
@@ -50,6 +63,8 @@ public class PartidaXadrez {
 		if (!tabuleiro.temPeca(posicao)) {
 			throw new ExcecaoXadrez("Não existe peça nessa posição");
 		}
+		if (JogadorAtual != ((PecaXadrez)tabuleiro.peca(posicao)).getCor()) {
+			throw new ExcecaoXadrez("Não é sua vez:");		}
 		if (!tabuleiro.peca(posicao).existeUmMovimentoPossivel()) {
 			throw new ExcecaoXadrez("Não existe movimeneto para essa peça");
 		}
@@ -67,6 +82,11 @@ public class PartidaXadrez {
 		tabuleiro.lugarPeca(p, alvo);
 		return capturarPeca;
 		}
+	
+	private void proximoTurno() {
+		Turno++;
+		JogadorAtual = (JogadorAtual == Cor.BRANCO)? Cor.PRETO:Cor.BRANCO;
+	}
 	
 	private void novoLugarPeca(char coluna, int linha, PecaXadrez peca ) {
 		tabuleiro.lugarPeca(peca,new PosicaoXadrez(coluna,linha).posicionar());
@@ -106,10 +126,11 @@ public class PartidaXadrez {
 		novoLugarPeca('a',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('b',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('c',2, new Peao(tabuleiro,Cor.BRANCO));
-		//novoLugarPeca('d',2, new Peao(tabuleiro,Cor.BRANCO));
+		novoLugarPeca('d',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('e',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('f',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('g',2, new Peao(tabuleiro,Cor.BRANCO));
 		novoLugarPeca('h',2, new Peao(tabuleiro,Cor.BRANCO));
 	}
+	
 }
