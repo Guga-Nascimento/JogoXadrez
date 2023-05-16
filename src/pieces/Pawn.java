@@ -1,4 +1,4 @@
-package pecasXadrez;
+package pieces;
 
 import boardgame.Board;
 import boardgame.Position;
